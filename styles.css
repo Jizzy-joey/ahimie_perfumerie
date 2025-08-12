@@ -94,12 +94,12 @@ nav {
     list-style: none;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: auto;
+  grid-template-rows: repeat(1, 1fr);
   padding: 5px;
   margin-left: 5px;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 4px;
 }
 .featured-products div {
 
