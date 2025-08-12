@@ -5,64 +5,9 @@
   margin: 0;
   padding: 0;
 }
-@media screen {
-  /* Add your responsive styles here */
-  body {
-    padding: 20px;
-  }
-  .featured-products {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media screen and (max-width:480px) {
-  body {
-    padding: 10px;
-    font-size: 1em;
-  }
-  header {
-    padding: 8px 0;
-    flex-direction: column;
-    gap: 15px;
-  }
-  h1 {
-    font-size: 1.5em;
-    text-align: center;
-  }
-  .logo {
-    width: 70px;
-    height: 70px;
-    border-width: 3px;
-  }
-  nav {
-    margin: 0;
-    position: static;
-  }
-  .navigate ul, .navigate li {
-    flex-direction: column;
-    gap: 10px;
-    padding: 8px;
-  }
-  .container {
-    padding: 0;
-  }
-  .content-image {
-    height: 200px;
-    border-width: 1px;
-  }
-  .content-description {
-    padding: 6px;
-    font-size: 0.95em;
-  }
-  .title {
-    margin: 10px 0;
-    font-size: 1.1em;
-  }
-  .featured-products, ul {
-    grid-template-columns: 1fr;
-    gap: 6px;
-    padding: 2px;
-    margin-left: 0;
-  }
+
+html {
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -70,81 +15,171 @@ body {
   line-height: 1.6;
   background-color: #f4f4f4;
   color: #333;
+  padding: 10px;
+  font-size: 1em;
 }
+
+/* Mobile-first header styles */
 header {
   background: #4e3e8c;
   color: #ffffff;
-  padding: 10px 0;
+  padding: 8px 0;
   text-align: center;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 50px;
+  gap: 15px;
 }
+
 h1 {
   font-family: "Noto Sans JP", sans-serif;
   margin: 0;
-  font-size: 2.5em;
+  font-size: 1.5em;
   color: rgb(255, 255, 255);
-}
-.logo{
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 5px solid #fff;
-  border-color: #4e3e8c;
+  text-align: center;
 }
 
-nav {     
-  margin: 0px 0;
+.logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 3px solid #fff;
 }
+
+nav {
+  margin: 0;
+}
+
 .navigate ul, .navigate li {
   background-color: rgb(4, 4, 4);
-  padding: 10px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 100px;
+  gap: 10px;
+  padding: 0;
 }
 
-.container{
+.navigate a {
+  display: block;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  min-height: 48px;
+}
+
+.container {
   position: relative;
   text-align: center;
   color: white;
+  margin-bottom: 20px;
 }
 
 .content-image {
   filter: brightness(40%);
-  border: 2px solid #ccc;
+  border: 1px solid #ccc;
   width: 100%;
-  height: 700px;
+  height: 200px;
   object-fit: cover;
-  margin: 0px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 .content-description {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px;
+  padding: 6px;
   border-radius: 5px;
+  font-size: 0.95em;
+  width: 90%;
 }
+
 .title {
-  text-align: left;
-  margin: 20px 0;
+  margin: 10px 0;
+  font-size: 1.1em;
 }
-.featured-products, ul{
+
+.featured-products {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  gap: 14px;
   padding: 5px;
-  margin-left: 5px;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+}
+
+.featured-products li {
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #080808;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Tablet styles */
+@media screen and (min-width: 481px) {
+  body {
+    padding: 0px;
+  }
+  
+  .featured-products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .content-image {
+    height: 300px;
+    border-width: 2px;
+  }
+  
+  .content-description {
+    padding: 10px;
+    font-size: 1em;
+  }
+  
+  .title {
+    margin: 20px 0;
+    font-size: 1.3em;
+  }
+  
+  header {
+    flex-direction: row;
+    gap: 50px;
+    padding: 10px 0;
+  }
+  
+  h1 {
+    font-size: 2em;
+  }
+  
+  .logo {
+    width: 100px;
+    height: 100px;
+    border-width: 5px;
+  }
+  
+  .navigate ul, .navigate li {
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+
+/* Desktop styles */
+@media screen and (min-width: 768px) {
+  .featured-products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .content-image {
+    height: 500px;
+  }
+}
+
+/* Large desktop */
+@media screen and (min-width: 1024px) {
+  .content-image {
+    height: 700px;
+  }
 }
