@@ -137,8 +137,8 @@ nav {
   text-align: left;
   margin: 20px 0;
 }
-.featured-products {
-    list-style: none;
+.featured-products, ul{
+  list-style: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
