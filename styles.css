@@ -57,7 +57,7 @@
     margin: 10px 0;
     font-size: 1.1em;
   }
-  .featured-products, li {
+  .featured-products {
     grid-template-columns: 1fr;
     gap: 6px;
     padding: 2px;
